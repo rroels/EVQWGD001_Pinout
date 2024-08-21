@@ -18,7 +18,7 @@ I wanted to use a EVQWGD001 rotary encoder in a project. However, it was not ver
 * AliExpress vendor pages
 * ...
 
-I encountered different documentation, each with a order of the pins, and even on the vendor page on AliExpress it would have two different pinouts in the same product description. 
+I encountered different documentation, each with a different description of the pins, and even on the vendor page on AliExpress it would have two different pinouts in the same product description. 
 
 Even when looking at existing projects (e.g. custom keyboard PCBs), I would find them wired up in different ways. 
 
