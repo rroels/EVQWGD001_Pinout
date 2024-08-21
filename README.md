@@ -5,7 +5,7 @@
 
 TL;DR, this is the correct pinout:
 
-<img src="images/pinout.jpg" width="500">
+<img src="images/pinout.jpg" width="500" target="_blank">
 
 Continue reading if you want to know how this can be verified, or why it still works fine if you wired it wrong. 
 
@@ -37,13 +37,13 @@ As the pins of the EVQWGD001 didn't play well with breadboards and dupont cables
 
 To keep things simple I wanted to avoid using a microcontroller, so I added two pull-up resistors that simulate the microcontroller pins with internal pull-ups.
 
-<img src="images/jig1.jpg" width="300">
+<img src="images/jig1.jpg" width="300" target="_blank">
 
-<img src="images/jig2.jpg" width="300">
+<img src="images/jig2.jpg" width="300" target="_blank">
 
 ### Measurements
 
-I was then able to wire and visualise the various possible pinouts. Basically, either the first pin is the common pin, the second pin is the common pin or the third pin is the common pin. The remaining two pins are always assumed to be channel A and B. 
+I was then able to wire and visualise the various possible pinouts. Basically, either the first pin is the common pin, the second pin is the common pin, or the third pin is the common pin. The remaining two pins are always assumed to be channel A and B. 
 
 For each of these three scenarios, I made a small recording on the oscilloscope, which contained one scroll up and one scroll down. This is what it looks like for each scenario.
 
@@ -51,31 +51,31 @@ For each of these three scenarios, I made a small recording on the oscilloscope,
 
 Assumption: the first pin is the common pin
 
-<img src="images/common_first.png" width="500">
+<img src="images/common_first.png" width="500" target="_blank">
 
 <hr>
 
 Assumption: the second pin is the common pin
 
-<img src="images/common_mid.png" width="500">
+<img src="images/common_mid.png" width="500" target="_blank">
 
 <hr>
 
 Assumption: the third pin is the common pin
 
-<img src="images/common_last.png" width="500">
+<img src="images/common_last.png" width="500" target="_blank">
 
 ### Pinout Conclusion
 
 As you can see, in the first two scenarios where we assume either the first or second pin is the common pin, it doesn't look like the signal one would expect from a rotary encoder. One of the channel's square waves is always aligned with the start or end of the other channel's square waves. 
 
-However, they are supposed to overlap, like this (source: [ArduinoGetStarted.com](https://arduinogetstarted.com/tutorials/arduino-rotary-encoder):
+However, they are supposed to overlap, like this (source: [ArduinoGetStarted.com](https://arduinogetstarted.com/tutorials/arduino-rotary-encoder)):
 
-<img src="images/phase.webp" width="300">
+<img src="images/phase.webp" width="300" target="_blank">
 
 We only saw similar results in scenario 3, where we assumed that the third pin is the common pin:
 
-<img src="images/common_last2.png" width="500">
+<img src="images/common_last2.png" width="600" target="_blank">
 
 Thus, we can conclude that the third pin is the common pin, and the first and second pins are the "A" and "B" channel respectively. 
 
